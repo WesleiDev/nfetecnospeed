@@ -139,7 +139,7 @@
                 method: "PUT",
                 headers: {
                     "Content-Type": "multipart/form-data; boundary=--------------------------090374872533917031043226",
-                    "Cache-Control": "no-cache"
+                    // "Cache-Control": "no-cache"
                 },
                 processData: false,
                 contentType: false,
