@@ -105,7 +105,7 @@
 
                 <div class="col-12">
                     <h2>Response: </h2>
-                    <div class="row" id="resultado">
+                    <div class="col-12" id="resultado">
 
                     </div>
                 </div>
