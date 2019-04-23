@@ -145,7 +145,7 @@
                 url: url,
                 method: "PUT",
                 headers: {
-                    "cache-control": "no-cache",
+                    // "cache-control": "no-cache",
                     //"Content-Type": "multipart/form-data; boundary=--------------------------090374872533917031043226",
                 },
                 processData: false,
