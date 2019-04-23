@@ -86,10 +86,16 @@
                         <input type="text" class="form-control" id="handler" value="17971">
                     </div>
                 </div>
-                <div class="col-5">
+                <div class="col-4">
                     <div >
                         <label for="">Token</label>
-                        <input type="text" class="form-control" id="token" value="671l9yopxq720w45cdi1553099793404">
+                        <input type="text" class="form-control" id="token" value="671duq8x5jrjlonipb91556041181534">
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div >
+                        <label for="">Senha Cert</label>
+                        <input type="text" class="form-control" id="senhacertificado" value="1234">
                     </div>
                 </div>
 
@@ -100,7 +106,7 @@
                     </div>
                 </div>
                 <div>
-                    <button href="#" class="btn btn-primary" onclick="enviarCertificado()">Atualizar Certificado</button>
+                    <button  class="btn btn-primary" onclick="enviarCertificado()">Atualizar Certificado</button>
                 </div>
 
                 <div class="col-12">
@@ -122,12 +128,13 @@
             console.log('Enciando certificado')
             var token =  document.getElementById('token').value;
             var handler = document.getElementById('handler').value;
+            var senhacertificado = document.getElementById('senhacertificado').value;
             var url = "https://managersaas.tecnospeed.com.br:1337/api/v1/empresa/"+handler+"?token="+token;
-            //var url = 'https://webhook.site/8e08f81e-9f60-4e10-82ee-9c5b67910c30';
+            //var url = 'https://webhook.site/a42b5236-f545-438e-88e4-0c82d9ac8fa5';
             var form = new FormData();
             var file = document.getElementById('cert').files[0]
             form.append("certificadobinario", file );
-            form.append("senhacertificado", "1234");
+            form.append("senhacertificado", senhacertificado);
             form.append("handle", "17971");
 
             var divresult = document.getElementById('resultado');
@@ -138,8 +145,9 @@
                 url: url,
                 method: "PUT",
                 headers: {
-                    "Content-Type": "multipart/form-data; boundary=--------------------------090374872533917031043226",
+                    "cache-control": "no-cache",
                     // "Cache-Control": "no-cache"
+                    "Content-Type": "multipart/form-data; boundary=--------------------------090374872533917031043226",
                 },
                 processData: false,
                 contentType: false,
