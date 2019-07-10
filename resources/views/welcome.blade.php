@@ -67,7 +67,7 @@
         </style>
     </head>
     <body >
-        <div id="app"class="flex-center position-ref full-height">
+        <div id="app"class="container" style="margin-top: 25px;">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -80,45 +80,88 @@
             @endif
 
             <div class="row">
-                <div class="col-2">
-                    <div>
-                        <label for="">Handler</label>
-                        <input type="text" class="form-control" id="handler" value="17971">
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div >
-                        <label for="">Token</label>
-                        <input type="text" class="form-control" id="token" value="671duq8x5jrjlonipb91556041181534">
-                    </div>
-                </div>
-                <div class="col-1">
-                    <div >
-                        <label for="">Senha Cert</label>
-                        <input type="text" class="form-control" id="senhacertificado" value="1234">
-                    </div>
-                </div>
-
-                <div class="form-group col-3">
-                    <div >
-                        <label for="">Certificado</label>
-                        <input type="file" class="form-control" id="cert">
-                    </div>
-                </div>
-                <div>
-                    <button  class="btn btn-primary" onclick="enviarCertificado()">Atualizar Certificado</button>
-                </div>
-
                 <div class="col-12">
-                    <h2>Response: </h2>
-                    <div class="col-12" id="resultado">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <h6>Teste do envio do certificado Via AJAX JQUERY</h6>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <div>
+                                    <label for="">Handler</label>
+                                    <input type="text" class="form-control" id="handler" value="17971">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div >
+                                    <label for="">Token</label>
+                                    <input type="text" class="form-control" id="token" value="671duq8x5jrjlonipb91556041181534">
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div >
+                                    <label for="">Senha Cert</label>
+                                    <input type="text" class="form-control" id="senhacertificado" value="1234">
+                                </div>
+                            </div>
 
+                            <div class="form-group col-3">
+                                <div >
+                                    <label for="">Certificado</label>
+                                    <input type="file" class="form-control" id="cert">
+                                </div>
+                            </div>
+                            <div>
+                                <button  class="btn btn-primary" onclick="enviarCertificado()">Atualizar Certificado</button>
+                            </div>
+
+                            <div class="col-12">
+                                <h2>Response: </h2>
+                                <div class="col-12" id="resultado">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+            </div>
 
+            <div class="row">
+                <div class="col-12">
+                    <div class="jumbotron">
+                        <form action="{{ route('create.account')  }}" method="post">
+                            {{csrf_field()}}
+                            <h6>Teste de Cadastro de Cliente</h6>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div >
+                                        <label for="">Token</label>
+                                        <input type="text" class="form-control" name="token" id="token" value="671f6o06eoqp9yq4cxr1562596034661">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div >
+                                        <label for="">CNPJ CLIENTE</label>
+                                        <input type="text" name="cnpj" class="form-control" id="cnpj" value="">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div >
+                                        <label for="">NOME CLIENTE</label>
+                                        <input type="text" name="razaosocial" class="form-control" id="razaosocial" value="">
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                    <div >
+                                        <button class="btn btn-primary">SALVAR</button>
+                                    </div>
+                                </div>
 
-
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
